@@ -18,6 +18,20 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'playfair': ['Playfair Display', 'serif'],
+				'inter': ['Inter', 'sans-serif'],
+			},
+			backgroundImage: {
+				'gradient-happy': 'var(--gradient-happy)',
+				'gradient-sad': 'var(--gradient-sad)',
+				'gradient-calm': 'var(--gradient-calm)',
+				'gradient-anxious': 'var(--gradient-anxious)',
+				'gradient-angry': 'var(--gradient-angry)',
+				'gradient-romantic': 'var(--gradient-romantic)',
+				'gradient-energetic': 'var(--gradient-energetic)',
+				'gradient-neutral': 'var(--gradient-neutral)',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
