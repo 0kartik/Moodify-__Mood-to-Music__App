@@ -19,7 +19,7 @@ const languages = [
 const playlistMap: Record<string, Record<string, { title: string; url: string }>> = {
   happy: {
     english: { title: "Happy Hits", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DXdPec7aLTmlC?utm_source=generator" },
-    telugu: { title: "Telugu Happy Songs", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX9FrcDD7Bt3j?utm_source=generator" },
+    telugu: { title: "Telugu Happy Songs", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX2UT3NuRgcHd?utm_source=generator" },
     hindi: { title: "Bollywood Happy", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd?utm_source=generator" },
     tamil: { title: "Tamil Happy Mix", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX2ZesOOXIKtD?utm_source=generator" },
     punjabi: { title: "Punjabi Party", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX1d5g8nrFFHC?utm_source=generator" },
@@ -27,7 +27,7 @@ const playlistMap: Record<string, Record<string, { title: string; url: string }>
   },
   sad: {
     english: { title: "Rainy Day Chill", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DWVV27DiNWxkR?utm_source=generator" },
-    telugu: { title: "Telugu Sad Songs", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DXbt3NcTbKp8w?utm_source=generator" },
+    telugu: { title: "Telugu Sad Songs", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DWUEWjDsV7AgX?utm_source=generator" },
     hindi: { title: "Bollywood Sad", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX7qK8ma5wgG1?utm_source=generator" },
     tamil: { title: "Tamil Melancholy", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX6aTaZa0K6VA?utm_source=generator" },
     punjabi: { title: "Punjabi Sad", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX1rVvRgjX59F?utm_source=generator" },
@@ -35,7 +35,7 @@ const playlistMap: Record<string, Record<string, { title: string; url: string }>
   },
   calm: {
     english: { title: "Calm Vibes", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX4sWSpwq3LiO?utm_source=generator" },
-    telugu: { title: "Telugu Peaceful", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX3wgRN9w7fzF?utm_source=generator" },
+    telugu: { title: "Telugu Peaceful", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DXdMUUSqm9tTc?utm_source=generator" },
     hindi: { title: "Hindi Chill", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX7K31D69s4M1?utm_source=generator" },
     tamil: { title: "Tamil Serenity", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX59NCqCqJtoH?utm_source=generator" },
     punjabi: { title: "Punjabi Peaceful", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DXdPLcfKsn6c2?utm_source=generator" },
@@ -51,7 +51,7 @@ const playlistMap: Record<string, Record<string, { title: string; url: string }>
   },
   angry: {
     english: { title: "Smash the Stress", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX3rxVfibe1L0?utm_source=generator" },
-    telugu: { title: "Telugu Rock", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DXcO8QKMmtrQw?utm_source=generator" },
+    telugu: { title: "Telugu Angry Songs", url: "https://open.spotify.com/embed/playlist/6QI6yorpWKr3Q0UBwKhzOo?utm_source=generator" },
     hindi: { title: "Bollywood Rock", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX6xZZEgC9Ubl?utm_source=generator" },
     tamil: { title: "Tamil Energy", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DXa8NOEUWPn9W?utm_source=generator" },
     punjabi: { title: "Punjabi Power", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX4dyCV0n2jNh?utm_source=generator" },
@@ -59,7 +59,7 @@ const playlistMap: Record<string, Record<string, { title: string; url: string }>
   },
   romantic: {
     english: { title: "Feel the Love", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DWYmmr74INQlb?utm_source=generator" },
-    telugu: { title: "Telugu Love Songs", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX7Fuh4kSHb6J?utm_source=generator" },
+    telugu: { title: "Telugu Love Songs", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX44F1QWqYoaV?utm_source=generator" },
     hindi: { title: "Bollywood Romance", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DWXe9gFZP0gtP?utm_source=generator" },
     tamil: { title: "Tamil Romance", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DXbYM3nMM0oPk?utm_source=generator" },
     punjabi: { title: "Punjabi Love", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX3YSRoSdA634?utm_source=generator" },
@@ -67,7 +67,7 @@ const playlistMap: Record<string, Record<string, { title: string; url: string }>
   },
   energetic: {
     english: { title: "Pump Up Mix", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DXdxcBWuJkbcy?utm_source=generator" },
-    telugu: { title: "Telugu Energy", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX8tZsk68tuDw?utm_source=generator" },
+    telugu: { title: "Telugu Energy", url: "https://open.spotify.com/embed/playlist/5AjguFfQcwckxklPO4XvT5si=v7NHNb4tRS2dFKA5UAEVsA?utm_source=generator" },
     hindi: { title: "Bollywood Workout", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX76Wlfdnj7AP?utm_source=generator" },
     tamil: { title: "Tamil Workout", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DWWJOmJ7nRx0C?utm_source=generator" },
     punjabi: { title: "Punjabi Pump", url: "https://open.spotify.com/embed/playlist/37i9dQZF1DXbGbOrjF3jct?utm_source=generator" },
