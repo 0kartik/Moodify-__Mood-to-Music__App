@@ -68,37 +68,37 @@ const MoodHistory = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-neutral p-4">
-      <div className="max-w-4xl mx-auto pt-20">
+    <div className="min-h-screen bg-gradient-neutral p-3 sm:p-4 lg:p-6">
+      <div className="max-w-4xl mx-auto pt-8 sm:pt-12 lg:pt-20">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <button 
             onClick={() => navigate('/')}
-            className="text-2xl font-playfair font-bold text-white mb-8 hover:scale-105 transition-transform"
+            className="text-xl sm:text-2xl font-playfair font-bold text-white mb-6 sm:mb-8 hover:scale-105 transition-transform"
           >
             ← Moodify
           </button>
-          <h1 className="text-4xl md:text-6xl font-playfair font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-4 sm:mb-6 px-4">
             Your Mood Journey
           </h1>
-          <p className="text-lg text-white/80 font-inter">
+          <p className="text-base sm:text-lg text-white/80 font-inter px-4">
             Rediscover your emotional soundtrack history
           </p>
         </div>
 
         {/* History Content */}
         {sessions.length === 0 ? (
-          <div className="text-center">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-12 mb-8">
-              <div className="text-6xl mb-4">🎵</div>
-              <h3 className="text-2xl font-semibold text-white mb-4">No mood history yet</h3>
-              <p className="text-white/70 mb-8">
+          <div className="text-center px-2">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 lg:p-12 mb-6 sm:mb-8">
+              <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4">🎵</div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">No mood history yet</h3>
+              <p className="text-sm sm:text-base text-white/70 mb-6 sm:mb-8 px-2">
                 Start creating your musical journey by sharing your emotions with us!
               </p>
               <Button
                 onClick={() => navigate('/mood')}
                 size="lg"
-                className="bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 text-white rounded-full px-8"
+                className="bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 text-white rounded-full px-6 sm:px-8 w-full sm:w-auto"
               >
                 Create Your First Mood
               </Button>
@@ -107,18 +107,18 @@ const MoodHistory = () => {
         ) : (
           <>
             {/* Clear History Button */}
-            <div className="text-center mb-8">
+            <div className="text-center mb-6 sm:mb-8">
               <Button
                 onClick={clearHistory}
                 variant="outline"
-                className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 rounded-full"
+                className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 rounded-full text-sm sm:text-base px-4 sm:px-6"
               >
                 🗑️ Clear History
               </Button>
             </div>
 
             {/* Sessions Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-2">
               {sessions.map((session, index) => {
                 const emoji = moodEmojis[session.mood] || "😌";
                 const label = moodLabels[session.mood] || "Calm";
@@ -130,16 +130,16 @@ const MoodHistory = () => {
                     className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer hover:scale-105"
                     onClick={() => handleSessionClick(session)}
                   >
-                    <CardContent className="p-6">
-                      <div className="text-center mb-4">
-                        <div className="text-4xl mb-2">{emoji}</div>
-                        <h3 className="font-semibold text-white text-lg">{label}</h3>
-                        <p className="text-sm text-white/70">{playlistTitle}</p>
+                    <CardContent className="p-4 sm:p-6">
+                      <div className="text-center mb-3 sm:mb-4">
+                        <div className="text-3xl sm:text-4xl mb-2">{emoji}</div>
+                        <h3 className="font-semibold text-white text-base sm:text-lg">{label}</h3>
+                        <p className="text-xs sm:text-sm text-white/70">{playlistTitle}</p>
                       </div>
                       
                       {session.inputText && (
-                        <div className="mb-4">
-                          <p className="text-sm text-white/80 italic line-clamp-2">
+                        <div className="mb-3 sm:mb-4">
+                          <p className="text-xs sm:text-sm text-white/80 italic line-clamp-2 px-1">
                             "{session.inputText}"
                           </p>
                         </div>
@@ -157,11 +157,11 @@ const MoodHistory = () => {
             </div>
 
             {/* New Mood Button */}
-            <div className="text-center mt-12">
+            <div className="text-center mt-8 sm:mt-12 px-4">
               <Button
                 onClick={() => navigate('/mood')}
                 size="lg"
-                className="bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 text-white rounded-full px-8"
+                className="bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 text-white rounded-full px-6 sm:px-8 w-full sm:w-auto"
               >
                 🎧 Create New Mood Playlist
               </Button>

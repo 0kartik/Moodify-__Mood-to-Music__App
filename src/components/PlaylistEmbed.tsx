@@ -84,9 +84,9 @@ export const PlaylistEmbed = ({ mood, className }: PlaylistEmbedProps) => {
   return (
     <div className={cn("w-full max-w-2xl mx-auto", className)}>
       {/* Language Selection */}
-      <div className="mb-6">
-        <h4 className="text-sm font-medium text-white/80 mb-3 text-center">Choose Language:</h4>
-        <div className="flex flex-wrap justify-center gap-2">
+      <div className="mb-4 sm:mb-6">
+        <h4 className="text-xs sm:text-sm font-medium text-white/80 mb-2 sm:mb-3 text-center">Choose Language:</h4>
+        <div className="flex flex-wrap justify-center gap-1 sm:gap-2">
           {languages.map((lang) => (
             <Button
               key={lang.code}
@@ -98,31 +98,32 @@ export const PlaylistEmbed = ({ mood, className }: PlaylistEmbedProps) => {
                   ? "bg-white text-black hover:bg-white/90" 
                   : "bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
                 } 
-                rounded-full px-4 py-2 text-xs
+                rounded-full px-2 sm:px-4 py-1 sm:py-2 text-xs
               `}
             >
-              {lang.flag} {lang.name}
+              <span className="block sm:hidden">{lang.flag}</span>
+              <span className="hidden sm:block">{lang.flag} {lang.name}</span>
             </Button>
           ))}
         </div>
       </div>
 
       {/* Playlist Title */}
-      <h3 className="text-xl font-semibold text-white mb-4 text-center">
+      <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 sm:mb-4 text-center px-2">
         🎵 {playlist.title}
       </h3>
       
       {/* Playlist Embed */}
-      <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-sm p-2">
+      <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-sm p-1 sm:p-2">
         <iframe
           src={playlist.url}
           width="100%"
-          height="352"
+          height="300"
           frameBorder="0"
           allowTransparency={true}
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
-          className="rounded-xl"
+          className="rounded-xl h-[300px] sm:h-[352px]"
         />
       </div>
     </div>

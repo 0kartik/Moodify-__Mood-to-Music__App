@@ -93,26 +93,26 @@ const MoodInput = () => {
   const backgroundClass = selectedMood ? `bg-gradient-${selectedMood}` : 'bg-gradient-neutral';
 
   return (
-    <div className={`min-h-screen ${backgroundClass} p-4 transition-all duration-500`}>
-      <div className="max-w-4xl mx-auto pt-20">
+    <div className={`min-h-screen ${backgroundClass} p-3 sm:p-4 lg:p-6 transition-all duration-500`}>
+      <div className="max-w-4xl mx-auto pt-8 sm:pt-12 lg:pt-20">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <button 
             onClick={() => navigate('/')}
-            className="text-2xl font-playfair font-bold text-white mb-8 hover:scale-105 transition-transform"
+            className="text-xl sm:text-2xl font-playfair font-bold text-white mb-6 sm:mb-8 hover:scale-105 transition-transform"
           >
             ← Moodify
           </button>
-          <h1 className="text-4xl md:text-6xl font-playfair font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-4 sm:mb-6 px-4">
             How are you feeling right now?
           </h1>
-          <p className="text-lg text-white/80 font-inter">
+          <p className="text-base sm:text-lg text-white/80 font-inter px-4">
             Choose an emoji or describe your emotions in words
           </p>
         </div>
 
         {/* Mood Selection Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 mb-8 sm:mb-12 px-2">
           {moods.map((mood) => (
             <MoodButton
               key={mood.value}
@@ -126,14 +126,14 @@ const MoodInput = () => {
         </div>
 
         {/* Divider */}
-        <div className="flex items-center justify-center mb-8">
-          <div className="h-px bg-white/30 flex-1 max-w-32"></div>
-          <span className="px-4 text-white/60 font-inter">or</span>
-          <div className="h-px bg-white/30 flex-1 max-w-32"></div>
+        <div className="flex items-center justify-center mb-6 sm:mb-8 px-4">
+          <div className="h-px bg-white/30 flex-1 max-w-24 sm:max-w-32"></div>
+          <span className="px-3 sm:px-4 text-sm sm:text-base text-white/60 font-inter">or</span>
+          <div className="h-px bg-white/30 flex-1 max-w-24 sm:max-w-32"></div>
         </div>
 
         {/* Text Input */}
-        <div className="max-w-2xl mx-auto mb-12">
+        <div className="max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
           <Textarea
             placeholder="Type what's on your mind... (e.g., 'Feeling overwhelmed with work', 'So excited about the weekend!', 'Need something calming')"
             value={textInput}
@@ -141,17 +141,17 @@ const MoodInput = () => {
               setTextInput(e.target.value);
               setSelectedMood(null); // Clear emoji selection when typing
             }}
-            className="min-h-[120px] bg-white/10 backdrop-blur-sm border-white/30 text-white placeholder:text-white/50 resize-none rounded-2xl text-lg p-6"
+            className="min-h-[100px] sm:min-h-[120px] bg-white/10 backdrop-blur-sm border-white/30 text-white placeholder:text-white/50 resize-none rounded-2xl text-base sm:text-lg p-4 sm:p-6"
           />
         </div>
 
         {/* Generate Button */}
-        <div className="text-center">
+        <div className="text-center px-4">
           <Button
             onClick={handleGeneratePlaylist}
             disabled={isLoading}
             size="lg"
-            className="text-xl px-12 py-6 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 hover:scale-105 transition-all duration-300 text-white font-medium shadow-2xl disabled:opacity-50"
+            className="text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 hover:scale-105 transition-all duration-300 text-white font-medium shadow-2xl disabled:opacity-50 w-full sm:w-auto"
           >
             {isLoading ? (
               <>🎵 Analyzing your mood...</>
