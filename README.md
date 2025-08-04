@@ -1,4 +1,4 @@
-# Moodify – Mood-to-Music Generator 🎵
+# Moodify – Mood-to-Music Generator
 
 Welcome to **Moodify**, a creative AI-powered project built by **Kartikeya** that generates music recommendations based on your current mood. Whether you're feeling hyped, calm, heartbroken, or euphoric — Moodify taps into the magic of Spotify, OpenAI, and emotion recognition to serve the perfect soundtrack.
 
@@ -10,7 +10,7 @@ Welcome to **Moodify**, a creative AI-powered project built by **Kartikeya** tha
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 This project is built using the modern web stack:
 
@@ -22,7 +22,7 @@ This project is built using the modern web stack:
 
 ---
 
-## ✨ Features
+##  Features
 
 * AI-based **mood recognition** from text or emojis
 * Fetches matching **music tracks from Spotify / YouTube**
@@ -32,7 +32,7 @@ This project is built using the modern web stack:
 
 ---
 
-## 🧠 How It Works (Architecture)
+##  How It Works (Architecture)
 
 1. **Frontend (React + Tailwind)**
 
@@ -51,7 +51,7 @@ This project is built using the modern web stack:
 
 ---
 
-## 🚀 Editing This Project
+##  Editing This Project
 
 You have multiple ways to continue editing Moodify:
 
@@ -94,7 +94,7 @@ Launch directly in the cloud with a full dev environment:
 
 ---
 
-## 🌐 Deploying Moodify
+## Deploying Moodify
 
 To make your app live:
 
@@ -104,7 +104,7 @@ To make your app live:
 
 ---
 
-## 💡 Future Scope
+##  Future Scope
 
 * Add voice mood detection
 * Integrate personalized user accounts
@@ -113,7 +113,7 @@ To make your app live:
 
 ---
 
-## 👨🏻‍💻 Project by Kartikeya
+## Project by Kartikeya
 
 Moodify was conceptualized, designed, and developed as part of Kartikeya's creative-tech journey into AI and cloud innovation.
 
