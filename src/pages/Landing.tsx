@@ -10,6 +10,8 @@ const Landing = () => {
   const [particles, setParticles] = useState<Array<{id: number, x: number, y: number, size: number, speed: number}>>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [buttonPulse, setButtonPulse] = useState(false);
+  const [selectedFeature, setSelectedFeature] = useState<number | null>(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -18,6 +20,12 @@ const Landing = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
+    
+    // Button pulse effect
+    const pulseInterval = setInterval(() => {
+      setButtonPulse(true);
+      setTimeout(() => setButtonPulse(false), 1000);
+    }, 4000);
     
     checkMobile();
     window.addEventListener('resize', checkMobile);
@@ -56,6 +64,7 @@ const Landing = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('resize', checkMobile);
+      clearInterval(pulseInterval);
     };
   }, [isMobile]);
 
@@ -186,9 +195,12 @@ const Landing = () => {
           {/* Enhanced CTA Button */}
           <div className={`mb-12 sm:mb-16 transition-all duration-1000 delay-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <Button
-              onClick={() => navigate('/mood')}
+              onClick={() => {
+                if (isMobile && navigator.vibrate) navigator.vibrate(100);
+                navigate('/mood');
+              }}
               size="lg"
-              className="group relative text-base sm:text-lg lg:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 hover:scale-105 transition-all duration-300 text-white font-medium shadow-2xl overflow-hidden w-full sm:w-auto"
+              className={`group relative text-base sm:text-lg lg:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 hover:scale-105 transition-all duration-300 text-white font-medium shadow-2xl overflow-hidden w-full sm:w-auto ${buttonPulse ? 'animate-pulse scale-105' : ''}`}
             >
               <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
                 <span className="text-xl sm:text-2xl group-hover:animate-bounce">🎧</span>
@@ -203,9 +215,14 @@ const Landing = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`group relative p-4 sm:p-6 lg:p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl ${feature.gradient} cursor-pointer`}
+                className={`group relative p-4 sm:p-6 lg:p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl ${feature.gradient} cursor-pointer mobile-touch interactive-glow ${selectedFeature === index ? 'animate-glow-pulse scale-105' : ''}`}
                 style={{ animationDelay: `${index * 0.2}s` }}
-                onClick={() => isMobile && navigator.vibrate && navigator.vibrate(50)}
+                onClick={() => {
+                  if (isMobile && navigator.vibrate) navigator.vibrate(50);
+                  setSelectedFeature(selectedFeature === index ? null : index);
+                }}
+                onMouseEnter={() => setSelectedFeature(index)}
+                onMouseLeave={() => setSelectedFeature(null)}
               >
                 <div className="relative z-10">
                   <div className="text-3xl sm:text-4xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
